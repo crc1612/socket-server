@@ -34,10 +34,12 @@ export default class Server {
             // console.log('Cliente conectado');
             //configurar Usuario
             socket.configurarUsuario( cliente, this.io );
-            //Mensaje
+            // Obtener Usuarios
+            socket.obtenerUsuarios( cliente, this.io );
+            // Mensaje
             socket.mensaje( cliente, this.io );
             // desconectar
-            socket.desconectar( cliente );
+            socket.desconectar( cliente, this.io );
         });
     }
 
